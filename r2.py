@@ -25,15 +25,17 @@ def convert(lines):
 				allen_sticker_count += 1
 			elif s[2] == '圖片':
 				allen_image_count += 1
-			for msg in s[2:]: 
-				allen_word_count =  allen_word_count + len(msg)
+			else:
+				for msg in s[2:]: 
+					allen_word_count =  allen_word_count + len(msg)
 		elif name == 'Viki':
 			if s[2] == '貼圖':
 				viki_sticker_count += 1
 			elif s[2] == '圖片':
 				viki_image_count += 1
-			for msg in s[2:]: 
-				viki_word_count =  viki_word_count + len(msg)
+			else:
+				for msg in s[2:]: 
+					viki_word_count =  viki_word_count + len(msg)
 
 	print('Allen speak', allen_word_count, 'send', allen_sticker_count, 'sticker', allen_image_count, 'image')
 	print('Viki speak', viki_word_count, 'send', viki_sticker_count, 'sticker', viki_image_count, 'image')
